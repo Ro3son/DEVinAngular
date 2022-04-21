@@ -1,0 +1,16 @@
+<!-- Template form group -->
+<main class="main">
+    
+  <h1>{{ title }}</h1>
+
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <!--  With submit event / save data -->
+    <label for="email">Email: </label>
+    <input id="input-email" type="text" formControlName="email" />
+
+    <label for="password">password: </label>
+    <input id="input-password" type="password" formControlName="password" />
+
+    <button type="submit" [disabled]="!form.valid">Log in</button>
+  </form>
+</main>
