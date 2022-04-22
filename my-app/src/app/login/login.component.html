@@ -1,16 +1,18 @@
 <!-- Template form group -->
 <main class="main">
     
-  <h1>{{ title }}</h1>
+  <h1>{{ title }}</h1> <!-- Data Binding (vinculação de dados) one-way interpolação de string -->
 
-  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <!--  With submit event / save data -->
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">     <!--  With submit event / save data -->
+
     <label for="email">Email: </label>
     <input id="input-email" type="text" formControlName="email" />
 
-    <label for="password">password: </label>
+    <label for="password">Password: </label>
     <input id="input-password" type="password" formControlName="password" />
 
     <button type="submit" [disabled]="!form.valid">Log in</button>
   </form>
+  <!-- <p>Form value: {{ form.value  }}</p> -->
+  <p>Form status: {{ form.status }}</p>
 </main>
