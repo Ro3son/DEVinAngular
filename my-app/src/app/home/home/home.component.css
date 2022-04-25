@@ -1,0 +1,77 @@
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 16px;
+  font-family: "Ubuntu", sans-serif;
+  border-bottom: 2px solid whitesmoke;
+  background-color: #040d21;
+}
+
+header .span-icon {
+  font-size: 6em;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 15px;
+}
+
+header .span-icon .fa-brands {
+  color: #c3002f;
+}
+
+header h1 {
+  font-size: 3em;
+  color: #c3002f;
+  text-decoration: underline;
+  -webkit-box-flex: 1.2;
+      -ms-flex-positive: 1.2;
+          flex-grow: 1.2;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 469px;
+  width: 100%;
+  padding: 16px;
+  gap: 8em;
+  background-color: #040d21;
+}
+
+.main .container-link {
+  cursor: pointer;
+  border: 2px solid #000;
+  height: 70px;
+  width: 20%;
+  -webkit-box-shadow: 4px 8px;
+          box-shadow: 4px 8px;
+  text-align: center;
+  padding-top: 12px;
+}
+
+.main .container-link:hover {
+  color: #c3002f;
+}
+
+.main .container-link #app-link {
+  font-size: 1.6em;
+  font-family: Azeret Mono;
+  padding: 8px;
+  color: #c3002f;
+}
+
+.main .container-link #app-link:hover {
+  color: whitesmoke;
+}
+/*# sourceMappingURL=home.component.css.map */
