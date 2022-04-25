@@ -1,0 +1,15 @@
+<main class="main-login">
+    <h1>{{ title }}</h1>
+    <!-- Text Interpolation -->
+    <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="container-email-password">
+            <label for="email">{{ email }} </label>
+            <input type="text" placeholder="Digite seu e-mail" formControlName="email" />
+            <label for="password">{{ password }} </label>
+            <input type="password" placeholder="Digite sua senha" formControlName="password" />
+        </div>
+        <button type="submit" [disabled]="!form.valid">{{ content }}</button>
+    </form>
+</main>
+
+<!-- <pre>{{ this.form.value | json }}</pre> -->
