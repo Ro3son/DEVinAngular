@@ -1,0 +1,40 @@
+.formControl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    gap: 0.4em;
+    margin: 12px;
+    padding: 12px;
+    height: 400px;
+
+    .input {
+        align-self: center;
+        font-size: 1em;
+        width: 25%;
+        background-color: transparent;
+        color: whitesmoke;
+        border: 2px solid #c3002f;
+        padding: 12px;
+        outline: none;
+    }
+
+    .button {
+        align-self: center;
+        font-size: 1em;
+        background-color: transparent;
+        color: #000;
+        border: 2px solid #c3002f;
+        padding: 12px;
+        cursor: pointer;
+
+        i {
+            color: whitesmoke;
+        }
+    }
+}
+
+p {
+    text-align: center;
+    color: whitesmoke;
+}
