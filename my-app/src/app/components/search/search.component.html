@@ -1,1 +1,6 @@
+<form class="formControl">
+    <input class="input" type="search" placeholder="Buscar.." [formControl]="input" />
+    <button class="button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+</form>
 
+<p>{{ input.value }}</p>
