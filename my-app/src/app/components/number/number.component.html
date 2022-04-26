@@ -1,7 +1,7 @@
 <form class="form">
     <div class="container-inputs">
         <input id="input" type="number" [(ngModel)]="inputValue1" />
-        <input id="input" type="number" [(ngModel)]="inputValue2"/>
+        <input id="input" type="number" [(ngModel)]="inputValue2" />
     </div>
     <div class="container-buttons">
         <button class="btn" type="submit" (click)="add()">+</button>
@@ -10,6 +10,5 @@
         <button class="btn" type="submit" (click)="divide()">/</button>
         <button class="btn" type="submit" (click)="clear()">Limpar</button>
     </div>
+    <span class="span">{{ this.resultado }}</span>
 </form>
-
-<span>{{ this.inputValue1 + ' + ' + this.inputValue2 + ' = ' + this.resultado }}</span>
