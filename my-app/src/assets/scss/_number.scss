@@ -5,10 +5,52 @@
     align-items: center;
     gap: 1em;
     .container-inputs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 12px;
+        padding: 16px;
+        max-width: 30em;
+        width: 100%;
+        #input {
+            font-size: 1em;
+            margin: 4px;
+            padding: 8px;
+            width: 100%;
+            background-color: transparent;
+            color: whitesmoke;
+            border: 2px solid #c3002f;
+            outline: none;
+        }
     }
     .container-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 12px;
+        padding: 16px;
+        max-width: 30em;
+        width: 100%;
         .btn {
+            font-size: 1em;
+            margin: 4px;
+            padding: 8px;
+            width: 50%;
+            background-color: transparent;
             color: whitesmoke;
+            border: 2px solid #c3002f;
+            cursor: pointer;
+            &:hover {
+                background-color: #040d21;
+                border: 2px solid whitesmoke;
+            }
         }
+    }
+    .span {
+        font-family: "Ubuntu", sans-serif;
+        font-size: 2em;
+        text-align: center;
+        color: whitesmoke;
     }
 }
