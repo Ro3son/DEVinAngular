@@ -3,10 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-number',
   templateUrl: './number.component.html',
-  styleUrls: ['./number.component.scss']
+  styleUrls: ['./number.component.scss'],
 })
 export class NumberComponent implements OnInit {
-
   // Variables / Properties //
   public inputValue1: number = 0;
 
@@ -21,19 +20,19 @@ export class NumberComponent implements OnInit {
   // Functions for all of the basic math operators //
   add() {
     const soma = this.inputValue1 + this.inputValue2;
-    this.resultado = soma;
+    this.resultado = `${this.inputValue1} + ${this.inputValue2} = ${soma}`;
   }
   subtract() {
     const subtrai = this.inputValue1 - this.inputValue2;
-    console.log(subtrai);
+    this.resultado = `${this.inputValue1} - ${this.inputValue2} = ${subtrai}`;
   }
   multiply() {
     const multiplica = this.inputValue1 * this.inputValue2;
-    console.log(multiplica);
+    this.resultado = `${this.inputValue1} * ${this.inputValue2} = ${multiplica}`;
   }
   divide() {
     const divide = this.inputValue1 / this.inputValue2;
-    console.log(divide);
+    this.resultado = `${this.inputValue1} / ${this.inputValue2} = ${divide}`;
   }
   clear() {
     this.resultado = '';
