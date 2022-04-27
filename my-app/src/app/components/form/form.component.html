@@ -1,0 +1,33 @@
+<h1>{{ title }}</h1>
+
+<form class="form-ava" [formGroup]="form" (ngSubmit)="onSubmit()"> <!-- save data -->
+    <!-- Usuários -->
+    <div class="container-user">
+
+        <label for="nome">Nome:</label>
+        <input type="text" formControlName="nome">
+
+        <label for="email">E-mail:</label>
+        <input type="email" formControlName="email" />
+
+    </div>
+    <!-- Avaliação -->
+    <div class="container-ava">
+
+        <label for="nome">Nome do filme:</label>
+        <input type="text" formControlName="nomeFilme" />
+
+        <label for="email">Avaliação:</label>
+        <input type="number" formControlName="avaliacao" />
+
+    </div>
+    <!-- submits form-data -->
+    <button type="submit" [disabled]="!form.valid" (click)="enviar()">Enviar</button>
+    <!-- resets the form-data to its initial values -->
+    <button type="reset">Cancelar</button>
+
+</form>
+
+<pre>Object = {{ form.value | json }}</pre>
+
+<pre>Status: {{ form.status }}</pre>
