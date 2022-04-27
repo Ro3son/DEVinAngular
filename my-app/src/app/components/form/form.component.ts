@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 // import { FormGroup, FormControl } from '@angular/forms';
 import { Validators, FormBuilder } from '@angular/forms';
 
@@ -7,7 +7,7 @@ import { Validators, FormBuilder } from '@angular/forms';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent {
+export class FormComponent implements OnInit {
 
   public title: string = 'Sistema de Avaliação';
 
@@ -24,11 +24,12 @@ export class FormComponent {
   constructor(private fb: FormBuilder) { }
 
   enviar() {
-    console.log(`Você avaliou o filme${this.form}`);
+    console.log(`Você avaliou o filme ${this.form.nomeFilme}`);
   }
   onSubmit() {
     console.log(this.form.value);
   }
+  ngOnInit(): void { }
 }
 
 
