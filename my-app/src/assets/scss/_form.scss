@@ -2,9 +2,9 @@
     font-family: "Ubuntu", sans-serif;
     background-color: whitesmoke;
     max-width: 30em;
-    height: 600px;
+    height: 620px;
     width: 100%;
-    margin: 20px auto auto auto;
+    margin: 16px auto auto auto;
     padding: 16px;
     border-radius: 10px;
     .h1 {
@@ -30,13 +30,13 @@
         .container-buttons {
             position: relative;
             width: 100%;
-            padding: 8px;
+            padding: 2px;
             text-align: center;
             button {
                 cursor: pointer;
                 font-size: 1em;
                 margin: 4px;
-                padding: 8px;
+                padding: 6px;
                 border: 1px solid #000;
             }
             button[type='submit'] {
