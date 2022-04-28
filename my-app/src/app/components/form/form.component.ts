@@ -11,6 +11,8 @@ export class FormComponent implements OnInit {
 
   public title: string = 'Sistema de Avaliação';
 
+  public resultado: any;
+
   public form = this.fb.group({
     nome: ['', Validators.required],
 
@@ -24,7 +26,8 @@ export class FormComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   enviar() {
-    console.log(`Você avaliou o filme ${this.form.nomeFilme}`);
+    const value = `Você avaliou o filme ${this.form.value.nomeFilme}.`;
+    this.resultado = value;
   }
   onSubmit() {
     console.log(this.form.value);
