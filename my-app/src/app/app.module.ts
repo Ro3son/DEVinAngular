@@ -13,6 +13,8 @@ import { NumberComponent } from './components/number/number.component';
 import { FormComponent } from './components/form/form.component';
 
 import { ServiceTestService } from './services/service-test.service';
+import { FilmesAPIComponent } from './components/filmes-api/filmes-api.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,15 @@ import { ServiceTestService } from './services/service-test.service';
     LoginComponent,
     SearchComponent,
     NumberComponent,
-    FormComponent
+    FormComponent,
+    FilmesAPIComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
 
   ],
   providers: [
