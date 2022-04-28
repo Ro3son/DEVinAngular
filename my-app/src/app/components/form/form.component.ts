@@ -14,20 +14,24 @@ export class FormComponent implements OnInit {
   public resultado: any;
 
   public form = this.fb.group({
-    nome: ['', Validators.required],
+    nome: ['', [Validators.required, Validators.minLength(3)]],
 
-    email: ['', Validators.required],
+    email: ['', [Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]],
 
-    nomeFilme: ['', Validators.required],
+    nomeFilme: ['', [Validators.required, Validators.minLength(3)]],
 
-    avaliacao: ['', Validators.required]
+    avaliacao: ['', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]]
   });
 
   constructor(private fb: FormBuilder) { }
 
-  enviar() {
-    const value = `Você avaliou o filme ${this.form.value.nomeFilme}.`;
-    this.resultado = value;
+  submit() {
+    const filmeAvaliado = `Você avaliou o filme ${this.form.value.nomeFilme}.`;
+    this.resultado = filmeAvaliado;
+    // this.form.reset();
+  }
+  reset() {
+    this.resultado = '';
   }
   onSubmit() {
     console.log(this.form.value);
