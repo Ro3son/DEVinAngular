@@ -1,11 +1,11 @@
 <div class="container-main">
     <h1 class="h1">{{ title }}</h1>
-    <form class="form-ava" [formGroup]="form" (ngSubmit)="onSubmit()">  <!-- save data -->
+    <form class="form-ava" [formGroup]="form" (ngSubmit)="onSubmit()"> <!-- save data -->
         <!-- Usuários -->
         <div class="container-user">
 
             <label for="nome">Nome:</label>
-            <input type="text" formControlName="nome">
+            <input type="text" formControlName="nome" />
 
             <label for="email">E-mail:</label>
             <input type="email" formControlName="email" />
@@ -22,17 +22,16 @@
 
         </div>
         <div class="container-buttons">
-        <!-- submits form-data -->
-        <button type="submit" (click)="enviar()">Enviar</button>
-        <!-- resets the form-data to its initial values -->
-        <button type="reset">Cancelar</button>
+            <!-- submits form-data -->
+            <button type="submit" (click)="submit()" [disabled]="!form.valid">Enviar</button>
+            <!-- resets the form-data to its initial values -->
+            <button type="reset" (click)="reset()">Cancelar</button>
         </div>
-        
 
     </form>
-    
+
     <pre>{{ resultado }}</pre><br>
-    <pre>Object = {{ form.value | json }}</pre>
+    <!-- <pre>Object = {{ form.value | json }}</pre> -->
     <pre>Status: {{ form.status }}</pre>
-    
+
 </div>
