@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceTestService } from 'src/app/services/service-test.service';
 
 @Component({
   selector: 'app-filmes-api',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmesAPIComponent implements OnInit {
 
-  constructor() { }
+  dadosFilme: any;
+
+  constructor(private web: ServiceTestService) { }
 
   ngOnInit(): void {
+    this.carregaDadosFilmes();
   }
-
+  carregaDadosFilmes() {
+    this.dadosFilme = this.web.getFilmes('upcoming');
+  }
 }
