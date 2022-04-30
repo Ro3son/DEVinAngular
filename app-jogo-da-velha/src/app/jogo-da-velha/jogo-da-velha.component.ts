@@ -7,16 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./jogo-da-velha.component.scss']
 })
 export class JogoDaVelhaComponent implements OnInit {
-// Variables //
+  // Variables //
+
+  public title: string = '<JOGO-DA-VÉIA />';
+
   public player1: string = 'O';
+
+  public player2: string = 'X';
 
   public winner: string = '';
 
   public board: string[][] = [
     // Colunas //
-    ['','',''],
-    ['','',''],
-    ['','','']
+    ['', '', ''],
+    ['', '', ''],
+    ['', '', '']
   ]
 
   constructor() { }
@@ -30,21 +35,21 @@ export class JogoDaVelhaComponent implements OnInit {
         this.winner = this.player1;
       }
       // trocar jogador //
-     if(this.player1 == 'O') {
-       this.player1 = 'X';
-     } else {
-       this.player1 = 'O';
+      if (this.player1 == 'O') {
+        this.player1 = 'X';
+      } else {
+        this.player1 = 'O';
       }
     }
   }
   public checkWinner(player: string): boolean {
-    for(let i = 0; i < this.board.length; i++) {
-      if(this.board[i][0] == player && this.board[i][1] == player && this.board[i][2] == player) {
+    for (let i = 0; i < this.board.length; i++) {
+      if (this.board[i][0] == player && this.board[i][1] == player && this.board[i][2] == player) {
         return true;
       }
     }
-    for(let i = 0; i < this.board.length; i++) {
-      if(this.board[0][i] == player && this.board[1][i] == player && this.board[2][i] == player) {
+    for (let i = 0; i < this.board.length; i++) {
+      if (this.board[0][i] == player && this.board[1][i] == player && this.board[2][i] == player) {
         return true;
       }
     }
@@ -60,9 +65,9 @@ export class JogoDaVelhaComponent implements OnInit {
     this.player1 = 'O';
     this.winner = '';
     this.board = [
-      ['','',''],
-      ['','',''],
-      ['','','']
+      ['', '', ''],
+      ['', '', ''],
+      ['', '', '']
     ]
   }
   ngOnInit(): void {
