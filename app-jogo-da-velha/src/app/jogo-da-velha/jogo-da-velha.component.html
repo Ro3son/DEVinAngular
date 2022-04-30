@@ -1,11 +1,20 @@
-<div>
-    <p>Jogador atual: {{ player1 }}</p>
-    <p>Vencedor: {{ winner }}</p>
-
+<header class="header">
+    <h1 class="fs-1 text-center">{{ title }}</h1>
+</header>
+<main class="main">
+    <div class="buttons">
+        <button type="button" class="btn btn-secondary">O</button>
+        <button type="button" class="btn btn-success">X</button>
+    </div>
+    <div class="players">
+        <p>Jogador 1: {{ player1 }}</p>
+        <p>Jogador 2: {{ player2 }}</p>
+        <p>Vencedor: {{ winner }}</p>
+    </div>
     <!-- *ngIf="!winner" -->
-
-    <button type="button" class="btn btn-primary" (click)="reset()">Reiniciar Partida...</button>
-
+    <div class="restart">
+        <button type="button" class="btn btn-primary" (click)="reset()">Reiniciar Partida...</button>
+    </div>
     <!-- <table>
         <tr>
             <td (click)="processPlay(0,0)">{{ board[0][0]}}</td>
@@ -30,4 +39,4 @@
             </td>
         </tr>
     </table>
-</div>
+</main>
