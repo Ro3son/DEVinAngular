@@ -1,75 +1,54 @@
-import { ThisReceiver } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-jogo-da-velha',
   templateUrl: './jogo-da-velha.component.html',
   styleUrls: ['./jogo-da-velha.component.scss']
 })
-export class JogoDaVelhaComponent implements OnInit {
-  // Variables //
+export class JogoDaVelhaComponent {
 
-  public title: string = '<JOGO-DA-VÉIA />';
+  public title: string = '< jogo-da-véia />';
 
-  public player1: string = 'O';
+  public player1: string = '';
 
-  public player2: string = 'X';
+  public player2: string = '';
 
   public winner: string = '';
 
   public board: string[][] = [
-    // Colunas //
+    // cols and rows //
     ['', '', ''],
     ['', '', ''],
     ['', '', '']
   ]
-
   constructor() { }
 
-  public processPlay(line: number, col: number) {
-    // console.log(`A jogada aconteceu na linha ${line} e na coluna ${col} e o jogador ${this.player1}`)
-    if (this.board[line][col] == '' && this.winner == '') {
-      this.board[line][col] = this.player1;
-      //verifica jogador //
-      if (this.checkWinner(this.player1)) {
-        this.winner = this.player1;
-      }
-      // trocar jogador //
-      if (this.player1 == 'O') {
-        this.player1 = 'X';
-      } else {
-        this.player1 = 'O';
-      }
+  public select1() {
+    if ((<HTMLSelectElement>document.getElementById('btn1')).value == 'O') {
+      this.player1 = 'O';
+      this.player2 = 'X';
     }
   }
-  public checkWinner(player: string): boolean {
-    for (let i = 0; i < this.board.length; i++) {
-      if (this.board[i][0] == player && this.board[i][1] == player && this.board[i][2] == player) {
-        return true;
+  public select2() {
+    if ((<HTMLSelectElement>document.getElementById('btn2')).value == 'X') {
+      this.player1 = 'X';
+      this.player2 = 'O';
       }
-    }
-    for (let i = 0; i < this.board.length; i++) {
-      if (this.board[0][i] == player && this.board[1][i] == player && this.board[2][i] == player) {
-        return true;
-      }
-    }
-    if (this.board[0][0] == player && this.board[1][1] == player && this.board[2][2]) {
-      return true;
-    }
-    if (this.board[0][2] == player && this.board[1][1] == player && this.board[2][0]) {
-      return true;
-    }
-    return false;
+  }
+  public playRound(line: number, col: number) {
+
+  }
+  public checkWinner(player: string) {
+
   }
   public reset() {
-    this.player1 = 'O';
+    this.player1 = '';
+    this.player2 = '';
     this.winner = '';
     this.board = [
       ['', '', ''],
       ['', '', ''],
       ['', '', '']
     ]
-  }
-  ngOnInit(): void {
   }
 }
