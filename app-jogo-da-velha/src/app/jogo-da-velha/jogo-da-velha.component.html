@@ -3,39 +3,21 @@
 </header>
 <main class="main">
     <div class="buttons">
-        <button type="button" class="btn btn-secondary">O</button>
-        <button type="button" class="btn btn-success">X</button>
+        <button id="btn1" type="button" class="btn btn-secondary" (click)="select1()" value="O">O</button>
+        <button id="btn2" type="button" class="btn btn-success" (click)="select2()" value="X">X</button>
     </div>
     <div class="players">
         <p>Jogador 1: {{ player1 }}</p>
         <p>Jogador 2: {{ player2 }}</p>
         <p>Vencedor: {{ winner }}</p>
     </div>
-    <!-- *ngIf="!winner" -->
     <div class="restart">
-        <button type="button" class="btn btn-primary" (click)="reset()">Reiniciar Partida...</button>
+        <button type="button" class="btn btn-dark" (click)="reset()">Reiniciar Partida...</button>
     </div>
-    <!-- <table>
-        <tr>
-            <td (click)="processPlay(0,0)">{{ board[0][0]}}</td>
-            <td (click)="processPlay(0,1)">{{ board[0][1]}}</td>
-            <td (click)="processPlay(0,2)">{{ board[0][2]}}</td>
-        </tr>
-        <tr>
-            <td (click)="processPlay(1,0)">{{ board[1][0]}}</td>
-            <td (click)="processPlay(1,1)">{{ board[1][1]}}</td>
-            <td (click)="processPlay(1,2)">{{ board[1][2]}}</td>
-        </tr>
-        <tr>
-            <td (click)="processPlay(2,0)">{{ board[2][0]}}</td>
-            <td (click)="processPlay(2,1)">{{ board[2][1]}}</td>
-            <td (click)="processPlay(2,2)">{{ board[2][2]}}</td>
-        </tr>
-    </table> -->
     <table>
         <tr *ngFor="let row of [0,1,2]">
-            <td *ngFor="let col of [0,1,2]" (click)="processPlay(row, col)">
-                {{ board[row][col]}}
+            <td *ngFor="let col of [0,1,2]" (click)="playRound(row, col)">
+                {{ board[row][col] }}
             </td>
         </tr>
     </table>
