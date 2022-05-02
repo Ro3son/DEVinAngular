@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./jogo-da-velha.component.scss']
 })
 export class JogoDaVelhaComponent {
-// Variables //
+  // Variables //
   public title: string = '< jogo-da-véia />';
 
   public player1: string = '';
@@ -24,7 +24,7 @@ export class JogoDaVelhaComponent {
     ['', '', '']
   ]
   constructor() { }
-// Functions //
+  // Functions //
   public select1() {
     this.player1 = 'O',
       this.player2 = 'X';
@@ -40,7 +40,11 @@ export class JogoDaVelhaComponent {
         this.winner = this.p1;
       }
     }
-    let changePlayer = (this.p1 == 'O') ? this.p1 = 'X' : this.p1 = 'O';
+    if (this.p1 == 'O') {
+      this.p1 = 'X'
+    } else {
+      this.p1 = 'O';
+    }
   }
   public checkWinner(player: string): boolean {
     for (let i = 0; i < this.board.length; i++) {
