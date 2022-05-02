@@ -24,19 +24,23 @@ export class JogoDaVelhaComponent {
   constructor() { }
 
   public select1() {
-    if ((<HTMLSelectElement>document.getElementById('btn1')).value == 'O') {
-      this.player1 = 'O';
-      this.player2 = 'X';
-    }
+    this.player1 = 'O', 
+    this.player2 = 'X';
   }
   public select2() {
-    if ((<HTMLSelectElement>document.getElementById('btn2')).value == 'X') {
-      this.player1 = 'X';
-      this.player2 = 'O';
-      }
+    this.player1 = 'X', 
+    this.player2 = 'O';
   }
   public playRound(line: number, col: number) {
-
+    if (this.board[line][col] == '') {
+      this.board[line][col] = this.player1;
+    }
+    if (this.player1 == 'O') {
+        this.player1;
+    } 
+    if (this.player2 == 'X') {
+      this.player2;
+    } 
   }
   public checkWinner(player: string) {
 
