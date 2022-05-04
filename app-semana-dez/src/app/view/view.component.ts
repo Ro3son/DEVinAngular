@@ -7,7 +7,13 @@ import { Component } from '@angular/core';
 })
 export class ViewComponent {
 
-  constructor() { }
+  public resultado: string = '';
 
+  constructor() { }
+ 
+  recebiDadoDoFilho(respostaFilho: string) {
+    this.resultado = respostaFilho;
+    console.log(respostaFilho);
+  }
 
 }
