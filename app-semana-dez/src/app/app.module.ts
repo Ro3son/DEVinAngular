@@ -8,12 +8,16 @@ import { ViewComponent } from './view/view.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { MenuComponent } from './menu/menu.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BuscaComponent,
-    ViewComponent
+    ViewComponent,
+    MenuComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
