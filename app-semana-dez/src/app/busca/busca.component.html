@@ -1,5 +1,7 @@
 <p>Child Component</p>
 
-<input type="search" name="" id="input" />
+<input type="search" name="" id="input" [(ngModel)]="input" />
 
-<button type="submit">Enviar Dados Para o Pai</button>
+<button type="submit" (click)="dataFromChildToParent('')">Enviar Dados Para o Pai</button>
+
+<!-- <p>{{ input }}</p> -->
