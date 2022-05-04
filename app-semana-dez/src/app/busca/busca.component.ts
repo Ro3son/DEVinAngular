@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit  } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -6,10 +6,20 @@ import { FormControl } from '@angular/forms';
   templateUrl: './busca.component.html',
   styleUrls: ['./busca.component.scss']
 })
-export class BuscaComponent {
+export class BuscaComponent implements OnInit {
 
-  @Output() search:EventEmitter<string> = new EventEmitter();
+  input: string = '';
+
+  @Output() saida = new EventEmitter<string>();
 
   constructor() { }
+
+  ngOnInit() {
+    console.log(this.saida);
+  }
+
+  dataFromChildToParent(value: string) {
+    this.saida.emit(this.input);
+  }
 
 }
