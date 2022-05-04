@@ -10,6 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
+import { FullComponent } from './layouts/full/full.component';
+import { ContentComponent } from './layouts/content/content.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { HomeComponent } from './home/home.component';
     BuscaComponent,
     ViewComponent,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
+    FullComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
