@@ -1,7 +1,12 @@
-<p>Child Component</p>
+<!-- <p>Child Component</p> -->
 
-<input type="search" name="" id="input" [(ngModel)]="input" />
-
-<button type="submit" (click)="dataFromChildToParent('')">Enviar Dados Para o Pai</button>
+<form class="d-flex justify-content-center p-5">
+    <input class="form-control w-25" type="search" placeholder="Buscar" 
+        [(ngModel)]="input"
+        [ngModelOptions]="{standalone: true}" />
+    <button class="mx-1 btn btn-outline-dark" type="submit" 
+        (click)="dataFromChildToParent('')">Enviar Dados Para o Pai
+    </button>
+</form>
 
 <!-- <p>{{ input }}</p> -->
