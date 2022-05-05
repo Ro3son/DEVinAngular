@@ -12,6 +12,8 @@ import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { FullComponent } from './layouts/full/full.component';
 import { ContentComponent } from './layouts/content/content.component';
+import { PasswordComponent } from './layouts/password/password.component';
+import { InformarEmailComponent } from './informar-email/informar-email.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ContentComponent } from './layouts/content/content.component';
     MenuComponent,
     HomeComponent,
     FullComponent,
-    ContentComponent
+    ContentComponent,
+    PasswordComponent,
+    InformarEmailComponent
   ],
   imports: [
     BrowserModule,
