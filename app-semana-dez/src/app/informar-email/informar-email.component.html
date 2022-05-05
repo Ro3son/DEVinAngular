@@ -1,0 +1,9 @@
+<form class="d-flex justify-content-center p-5" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input class="form-control w-25" type="email" placeholder="E-mail" formControlName="email" />
+    <button class="mx-1 btn btn-outline-danger" type="submit" 
+    (click)="submit()" [disabled]="!form.valid">
+        Enviar
+    </button>
+</form>
+
+<pre class="text-center">Status: {{ form.status }}</pre>
