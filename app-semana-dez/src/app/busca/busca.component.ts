@@ -20,6 +20,7 @@ export class BuscaComponent implements OnInit {
 
   dataFromChildToParent(value: string) {
     this.saida.emit(this.input);
+    this.input = '';
   }
 
 }
