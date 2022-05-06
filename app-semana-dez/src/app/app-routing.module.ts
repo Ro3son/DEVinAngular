@@ -10,6 +10,21 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'email', component: InformarEmailComponent}
 
+
+  // {
+  //   path: 'home',
+  //   loadChildren: () => import('./modules/privado/privado.module').then(m => m.PrivadoModule)
+  // },
+  // {
+  //   path: 'login',
+  //   loadChildren: () => import('./modules/publico/publico.module').then(m => m.PublicoModule)
+  // },
+  // {
+  //   path: '',
+  //   redirectTo: '',
+  //   pathMatch: 'full'
+  // }
+
 ];
 
 @NgModule({
