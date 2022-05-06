@@ -8,8 +8,6 @@ import { Validators, FormBuilder } from '@angular/forms';
 })
 export class InformarEmailComponent implements OnInit {
 
-  resultado: any;
-
   form = this.fb.group({
     email: ['', [Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]]
   });
@@ -20,8 +18,7 @@ export class InformarEmailComponent implements OnInit {
     console.log(this.form.value);
   }
   submit() {
-    let submeter = this.form.value;
-    this.resultado = submeter;
+    window.localStorage.setItem('email', JSON.stringify(this.form.value));
   }
   ngOnInit(): void {
   }
