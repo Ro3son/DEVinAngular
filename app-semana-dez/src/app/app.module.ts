@@ -15,7 +15,6 @@ import { ContentComponent } from './layouts/content/content.component';
 import { PasswordComponent } from './layouts/password/password.component';
 import { InformarEmailComponent } from './informar-email/informar-email.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,6 @@ import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
     PasswordComponent,
     InformarEmailComponent,
     NotFoundComponent,
-    TelaInicialComponent
   ],
   imports: [
     BrowserModule,
