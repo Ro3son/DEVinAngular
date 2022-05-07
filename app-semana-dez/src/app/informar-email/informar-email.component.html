@@ -1,6 +1,6 @@
 <form class="d-flex justify-content-center p-5" [formGroup]="form" (ngSubmit)="onSubmit()">
     <input class="form-control w-25" type="email" placeholder="E-mail" formControlName="email" />
-    <button class="mx-1 btn btn-outline-danger" type="submit" routerLink="/home"
+    <button class="mx-1 btn btn-outline-danger" type="submit" routerLink="/privado/home"
     (click)="submit()" [disabled]="!form.valid">
         Enviar
     </button>
