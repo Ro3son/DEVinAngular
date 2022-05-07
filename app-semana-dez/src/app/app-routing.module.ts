@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 // import { HomeComponent } from './home/home.component';
 // import { InformarEmailComponent } from './informar-email/informar-email.component';
+// import { ContentComponent } from './layouts/content/content.component';
 
 const routes: Routes = [
 
@@ -10,7 +11,22 @@ const routes: Routes = [
   // { path: 'home', component: HomeComponent},
   // { path: 'email', component: InformarEmailComponent}
 
-  //  Roteamento entre módulos //
+  // Aninhamento de rotas //
+  // {
+  //   path: 'privado',
+  //   component: ContentComponent,
+  //   children: [
+  //     {
+  //       path: 'home',
+  //       component: HomeComponent,
+  //     },
+  //     {
+  //       path: 'content',
+  //       component: ContentComponent,
+  //     },
+  //   ]
+  // }
+  // Roteamento entre módulos //
   {
     path: 'privado',
     loadChildren: () => import('./modules/privado/privado.module').then(m => m.PrivadoModule)
