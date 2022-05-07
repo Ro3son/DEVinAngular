@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 // import { HomeComponent } from './home/home.component';
 // import { InformarEmailComponent } from './informar-email/informar-email.component';
 // import { ContentComponent } from './layouts/content/content.component';
 
 const routes: Routes = [
-
-  // { path: '', redirectTo: 'home', pathMatch: 'full'},
-  // { path: 'home', component: HomeComponent},
-  // { path: 'email', component: InformarEmailComponent}
-
   // Aninhamento de rotas //
   // {
   //   path: 'privado',
@@ -34,7 +30,10 @@ const routes: Routes = [
   {
     path: 'publico',
     loadChildren: () => import('./modules/publico/publico.module').then(m => m.PublicoModule)
-  }
+  },
+  { 
+    path: '**', component: NotFoundComponent,
+  },
 ];
 
 @NgModule({
