@@ -5,11 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './tela-inicial.component.html',
   styleUrls: ['./tela-inicial.component.scss']
 })
-export class TelaInicialComponent implements OnInit {
+export class TelaInicialComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
