@@ -7,12 +7,12 @@ import { EventEmitter } from '@angular/core';
 export class EventEmitterService {
 
   private static emitters: {
-    [submit: string]: EventEmitter<string>
+    [click: string]: EventEmitter<any>
   } = {}
-  static get(submit: string): EventEmitter<string> {
-    if (!this.emitters[submit])
-      this.emitters[submit] = new EventEmitter<string>();
-    return this.emitters[submit];
+  static get(click: string): EventEmitter<any> {
+    if (!this.emitters[click]) // Se o evento não existir cria o evento //
+      this.emitters[click] = new EventEmitter<any>(); // Se existir retorna o evento //
+    return this.emitters[click];
   }
 
   constructor() { }
