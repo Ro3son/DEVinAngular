@@ -11,10 +11,9 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    EventEmitterService.get('submit')
-      .subscribe(() => {
-        alert('E-mail alterado');
-        console.log('Alguma coisa deveria estar aqui!');
+    EventEmitterService.get('click').subscribe((value) => {
+        alert('E-mail alterado!');
+        console.log(value);
       });
   }
   // recebeEventoFilho(event: string) {
