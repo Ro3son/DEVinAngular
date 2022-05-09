@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { EventEmitterService } from '../services/event-emitter.service';
 
@@ -7,9 +7,7 @@ import { EventEmitterService } from '../services/event-emitter.service';
   templateUrl: './informar-email.component.html',
   styleUrls: ['./informar-email.component.scss']
 })
-export class InformarEmailComponent implements OnInit {
-
-  @Output() changeEmail = new EventEmitter<string>();
+export class InformarEmailComponent {
 
   form = this.fb.group({
     email: ['', [Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]]
@@ -22,13 +20,5 @@ export class InformarEmailComponent implements OnInit {
   }
   submit() {
     window.localStorage.setItem('email', JSON.stringify(this.form.value));
-    // this.changeEmail.emit(this.form.value);
-    EventEmitterService.get('submit').emit('');
   }
-  // submitEvent(value: string) {
-  //   EventEmitterService.get('').emit();
-  // }
-  ngOnInit(): void {
-  }
-
 }
