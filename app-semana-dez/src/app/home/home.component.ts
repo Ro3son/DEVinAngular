@@ -12,10 +12,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     EventEmitterService.get('submit')
-      .subscribe((value: string) => {
+      .subscribe(() => {
         alert('E-mail alterado');
+        console.log('Alguma coisa deveria estar aqui!');
       });
   }
+  // recebeEventoFilho(event: string) {
+  //   console.log(event);
+  // }
   // ngOnDestroy(){
   //   EventEmitterService.get('submit').unsubscribe();
   // }
