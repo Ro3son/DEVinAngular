@@ -18,7 +18,8 @@ export class InformarEmailComponent {
   onSubmit() {
     console.log(this.form.value);
   }
-  submit() {
+  submit(value: string) {
     window.localStorage.setItem('email', JSON.stringify(this.form.value));
+    EventEmitterService.get('click').emit(value);
   }
 }
