@@ -1,1 +1,12 @@
-<p>star-wars works!</p>
+<main class="d-flex justify-content-center align-items-center m-1 p-1">
+    <div class="card" *ngFor="let personagem of personagens" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ personagem.nome }}</h5>
+            <p class="card-text">{{ personagem.habilidade }}</p>
+            <p class="card-text">{{ personagem.planeta }}</p>
+            <p class="card-text">{{ personagem.armas }}</p>
+            <a href="#" class="btn btn-primary">Saiba Mais</a>
+        </div>
+    </div>
+</main>
