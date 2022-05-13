@@ -1,12 +1,11 @@
-<main class="d-flex justify-content-center align-items-center m-1 p-1">
-    <div class="card" *ngFor="" style="width: 18rem;">
+<main>
+    <div class="d-flex card" *ngFor="let personagem of personagens" style="width: 18rem;">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title"></h5>
-            <p class="card-text"></p>
-            <p class="card-text"></p>
-            <p class="card-text"></p>
-            <a href="#" class="btn btn-primary">Saiba Mais</a>
+            <p class="card-text">{{ personagem.nome }}</p>
+            <p class="card-text">{{ personagem.habilidade }}</p>
+            <p class="card-text">{{ personagem.planeta }}</p>
+            <p class="card-text">{{ personagem.armas }}</p>
         </div>
     </div>
 </main>
