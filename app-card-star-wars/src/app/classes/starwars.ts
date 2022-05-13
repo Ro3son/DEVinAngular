@@ -1,5 +1,4 @@
 export class Starwars {
-    
     id: number;
     nome: string;
     habilidade: string;
