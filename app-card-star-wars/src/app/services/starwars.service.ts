@@ -12,19 +12,24 @@ export class StarwarsService {
 
   constructor(private http: HttpClient) { }
 
+  // Requisita informações do banco de dados //
   public getPersonagens(): Observable<any[]> {
     return this.http.get<any[]>(this.requestURL);
   }
+  // Requisita somente uma informação //
+  public obterSomenteUm() {
 
-  // public getPersonagens() {
-  //   this.http.get(this.requestURL)
-  //   .toPromise().then((response) => {
-  //    console.log(response);
-  //    return response;
-  //   })
-  //   .catch((error) => {
-  //     console.log('Deu erro: ' + error);
-  //     return error;
-  //   });
-  // }
+  }
+  // Cadastra informações //
+  public postPersonagem() {
+
+  }
+  // Atualiza informações //
+  public putPersonagem() {
+
+  }
+  // Deleta informações //
+  public delete() {
+
+  }
 }
