@@ -5,4 +5,5 @@ export interface StarWars {
     planeta: string;
     armas: string;
     avatar: string;
+    info: string;
 }
