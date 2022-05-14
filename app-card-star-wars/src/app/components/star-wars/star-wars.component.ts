@@ -19,10 +19,10 @@ export class StarWarsComponent implements OnInit {
 
   }
   ngOnInit() {
-    this.obterTodos();
+    this.obterTodosPersonagens();
   }
-
-  public obterTodos() {
+  // Trazer todos os dados //
+  public obterTodosPersonagens() {
     this.starwarsService.getPersonagens().subscribe((dados: any) => {
       this.error = false;
       this.personagens = dados;
@@ -31,5 +31,21 @@ export class StarWarsComponent implements OnInit {
         console.warn('Deu erro', erro);
         this.error = true;
       })
+  }
+  // Trazer dados do ID escolhido //
+  public obterIdPersonagem() {
+
+  }
+  // Adicionar dados //
+  public adicionarPersonagem() {
+
+  }
+  // Atualizar dados //
+  public atualizarPersonagem() {
+
+  }
+  // Deletar dados //
+  public delete() {
+
   }
 }
