@@ -1,0 +1,39 @@
+main {
+    gap: 0.6em;
+    .card {
+        width: 15rem;
+        height: 545px;
+        background-color: transparent;
+        border: 1px solid #000;
+        cursor: pointer;
+        &:hover {
+            background-color: #1a1a1a;
+            border: 2px solid #1cbfff;
+        }
+        .card-img-top {
+            display: block;
+            margin: auto;
+            padding: auto;
+            width: 10em;
+        }
+        .card-body {
+            .card-text {
+                margin: 0.6em;
+                padding: auto;
+                font-size: 0.84em;
+                color: #d9eee1;
+            }
+        }
+        .card-btns {
+            a:hover {
+                background-color: #f60074;
+            }
+        }
+    }
+}
+.btns {
+    gap: 1em;
+    button {
+        background-color: #f60074;
+    }
+}
