@@ -1,3 +1,11 @@
+.novoPersonagem {
+    gap: 0.2em;
+    input {
+        background-color: transparent;
+        color: #d9eee1;
+        border: 2px solid #1cbfff;
+    }
+}
 main {
     gap: 0.6em;
     .card {
