@@ -13,6 +13,8 @@ export class StarWarsComponent {
 
   public error: boolean = false;
 
+  public cadastraNovoPersonagem: Starwars = { id: 0, nome: '', habilidade: '', planeta: '', armas: '', avatar: '', info: '' };
+
   constructor(private starwarsService: StarwarsService) {
 
   }
@@ -20,7 +22,7 @@ export class StarWarsComponent {
   public obterTodosPersonagens() {
     this.starwarsService.getPersonagens().subscribe((dados) => {
       this.error = false;
-      this.personagens = dados as [];
+      this.personagens = dados;
       console.log(JSON.stringify(this.personagens));
     },
       (erro: any) => {
@@ -32,7 +34,7 @@ export class StarWarsComponent {
   public obterIdPersonagem() {
     this.starwarsService.obterSomenteUm().subscribe((dados) => {
       this.error = false;
-      this.personagens = dados as [];
+      this.personagens = dados;
       console.log(JSON.stringify(this.personagens));
     },
       (erro: any) => {
@@ -42,14 +44,21 @@ export class StarWarsComponent {
   }
   // Adicionar dados //
   public adicionarPersonagem() {
-
+    return this.starwarsService.postPersonagem(this.cadastraNovoPersonagem).subscribe((cadastra) => {
+      this.personagens = cadastra.map((key) => {
+        return new Starwars(key.id, key.nome, key.habilidade, key.planeta, key.armas, key.avatar, key.info)
+      });
+      console.log(this.personagens);
+    })
   }
   // Atualizar dados //
   public atualizarPersonagem() {
 
   }
   // Deletar dados //
-  public delete() {
-
+  public delete(id: number) {
+    return this.starwarsService.delete(id).subscribe(() => {
+      console.log(this.personagens);
+    })
   }
 }
