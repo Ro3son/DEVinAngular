@@ -19,18 +19,18 @@ export class StarwarsService {
   }
   // Requisita somente uma informação //
   public obterSomenteUm(): Observable<Starwars[]> {
-    return this.http.get<Starwars[]>(`${this.requestURL}/${1}`);
+    return this.http.get<Starwars[]>(`${this.requestURL}/${2}`);
   }
   // Cadastra informações //
-  public postPersonagem() {
-
+  public postPersonagem(data: any): Observable<Starwars[]> {
+    return this.http.post<Starwars[]>(`${this.requestURL}`, data);
   }
   // Atualiza informações //
   public putPersonagem() {
 
   }
   // Deleta informações //
-  public delete() {
-
+  public delete(id: number): Observable<Starwars[]> {
+    return this.http.delete<Starwars[]>(`${this.requestURL}/${id}`);
   }
 }
