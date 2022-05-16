@@ -1,30 +1,32 @@
-<div class="d-flex justify-content-center m-1 p-1 novoPersonagem">
-    <input type="number" placeholder="id" [(ngModel)]="cadastraNovoPersonagem.id" />
-    <input type="text" placeholder="nome" [(ngModel)]="cadastraNovoPersonagem.nome" />
-    <input type="text" placeholder="habilidade" [(ngModel)]="cadastraNovoPersonagem.habilidade" />
-    <input type="text" placeholder="planeta" [(ngModel)]="cadastraNovoPersonagem.planeta" />
-    <input type="text" placeholder="armas" [(ngModel)]="cadastraNovoPersonagem.armas" />
-    <input type="text" placeholder="avatar" [(ngModel)]="cadastraNovoPersonagem.avatar" />
-    <input type="text" placeholder="info" [(ngModel)]="cadastraNovoPersonagem.info" />
-</div>
-<main class="d-flex justify-content-center m-1 p-1 font-monospace">
-    <div class="card" *ngFor="let personagem of personagens | keyobject">
-        <button class="btn btn-dark text-end" (click)="delete(personagem.id)">X</button>
-        <img [src]="personagem.avatar" class="card-img-top" alt="personagens-star-wars" />
-        <div class="card-body">
-            <p class="card-text fs-5">{{ personagem.nome }}</p>
-            <p class="card-text">Habilidade: {{ personagem.habilidade }}</p>
-            <p class="card-text">Planeta: {{ personagem.planeta }}</p>
-            <p class="card-text">Armas: {{ personagem.armas }}</p>
-        </div>
-        <div class="d-flex justify-content-center m-3 card-btns">
-            <a [href]="personagem.info" class="btn btn-dark">Saiba +</a>
+<main class="m-1 p-1 font-monospace">
+    <div class="d-flex justify-content-center m-1 p-1 novoPersonagem">
+        <input type="number" placeholder="id" [(ngModel)]="cadastraNovoPersonagem.id" />
+        <input type="text" placeholder="nome" [(ngModel)]="cadastraNovoPersonagem.nome" />
+        <input type="text" placeholder="habilidade" [(ngModel)]="cadastraNovoPersonagem.habilidade" />
+        <input type="text" placeholder="planeta" [(ngModel)]="cadastraNovoPersonagem.planeta" />
+        <input type="text" placeholder="armas" [(ngModel)]="cadastraNovoPersonagem.armas" />
+        <input type="text" placeholder="avatar" [(ngModel)]="cadastraNovoPersonagem.avatar" />
+        <input type="text" placeholder="info" [(ngModel)]="cadastraNovoPersonagem.info" />
+    </div>
+    <div class="d-flex justify-content-center m-1 p-1 container-fluid">
+        <div class="card" *ngFor="let personagem of personagens | keyobject">
+            <button class="btn btn-dark text-end" (click)="delete(personagem.id)">X</button>
+            <img [src]="personagem.avatar" class="card-img-top" alt="personagens-star-wars" />
+            <div class="card-body">
+                <p class="card-text fs-5">{{ personagem.nome }}</p>
+                <p class="card-text">Habilidade: {{ personagem.habilidade }}</p>
+                <p class="card-text">Planeta: {{ personagem.planeta }}</p>
+                <p class="card-text">Armas: {{ personagem.armas }}</p>
+            </div>
+            <div class="d-flex justify-content-center m-3 card-btns">
+                <a [href]="personagem.info" class="btn btn-dark">Saiba +</a>
+            </div>
         </div>
     </div>
+    <div class="d-flex justify-content-center btns m-1 p-1">
+        <button class="btn btn-dark" (click)="obterTodosPersonagens()">Obter Todos</button>
+        <button class="btn btn-dark" (click)="obterIdPersonagem()">Obter 1</button>
+        <button class="btn btn-dark" (click)="adicionarPersonagem()">Adicionar</button>
+        <button class="btn btn-dark" (click)="atualizarPersonagem()">Atualizar</button>
+    </div>
 </main>
-<div class="d-flex justify-content-center btns m-1 p-1">
-    <button class="btn btn-dark" (click)="obterTodosPersonagens()">Obter Todos</button>
-    <button class="btn btn-dark" (click)="obterIdPersonagem()">Obter 1</button>
-    <button class="btn btn-dark" (click)="adicionarPersonagem()">Adicionar</button>
-    <button class="btn btn-dark">Atualizar</button>
-</div>
