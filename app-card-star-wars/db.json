@@ -7,6 +7,15 @@
       "planeta": "Naboo",
       "armas": "Serra e bastão",
       "avatar": "http://especiais.ne10.uol.com.br/starwars/wp-content/uploads/2015/12/R2D2-300x300.png"
+    },
+    {
+      "id": 6,
+      "nome": "Yoda",
+      "habilidade": "Mestre Jedi",
+      "planeta": "Dagobah",
+      "armas": "Sabre de luz verde",
+      "avatar": "http://especiais.ne10.uol.com.br/starwars/wp-content/uploads/2015/12/yoda-300x300.png",
+      "info": "https://starwars.fandom.com/pt/wiki/Yoda"
     }
   ]
 }
