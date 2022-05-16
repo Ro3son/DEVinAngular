@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Starwars } from 'src/app/classes/starwars';
 import { StarwarsService } from 'src/app/services/starwars.service';
 
@@ -7,7 +7,7 @@ import { StarwarsService } from 'src/app/services/starwars.service';
   templateUrl: './star-wars.component.html',
   styleUrls: ['./star-wars.component.scss']
 })
-export class StarWarsComponent {
+export class StarWarsComponent implements OnInit {
 
   public personagens: Starwars[] = [];
 
@@ -15,9 +15,14 @@ export class StarWarsComponent {
 
   public cadastraNovoPersonagem: Starwars = { id: 0, nome: '', habilidade: '', planeta: '', armas: '', avatar: '', info: '' };
 
-  constructor(private starwarsService: StarwarsService) {
+  public editaPersonagem: Starwars = { id: 6, nome: 'Yoda', habilidade: 'Mestre Jedi', planeta: 'Dagobah', armas: 'Sabre de luz verde', avatar: 'http://especiais.ne10.uol.com.br/starwars/wp-content/uploads/2015/12/yoda-300x300.png', info: 'https://starwars.fandom.com/pt/wiki/Yoda' };
 
+  constructor(private starwarsService: StarwarsService) { }
+
+  ngOnInit(): void {
+    this.obterTodosPersonagens();
   }
+
   // Trazer todos os dados //
   public obterTodosPersonagens() {
     this.starwarsService.getPersonagens().subscribe((dados) => {
@@ -32,7 +37,7 @@ export class StarWarsComponent {
   }
   // Trazer dados do ID escolhido //
   public obterIdPersonagem() {
-    this.starwarsService.obterSomenteUm().subscribe((dados) => {
+    return this.starwarsService.obterSomenteUm().subscribe((dados) => {
       this.error = false;
       this.personagens = dados;
       console.log(JSON.stringify(this.personagens));
@@ -53,7 +58,9 @@ export class StarWarsComponent {
   }
   // Atualizar dados //
   public atualizarPersonagem() {
-
+    return this.starwarsService.putPersonagem(this.editaPersonagem).subscribe(() => {
+      console.log('Personagem Atualizado');
+    })
   }
   // Deletar dados //
   public delete(id: number) {
