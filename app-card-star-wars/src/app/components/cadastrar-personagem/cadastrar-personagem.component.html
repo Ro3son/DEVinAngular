@@ -1,0 +1,25 @@
+<main class="m-1 p-1">
+    <div class="d-flex flex-column justify-content-center align-items-center mt-4 novoPersonagem">
+        <input class="w-25" type="text" placeholder="nome" 
+        [(ngModel)]="cadastrarPersonagem.nome"
+        [ngModelOptions]="{standalone: true}" />
+        <input class="w-25" type="text" placeholder="habilidade" 
+        [(ngModel)]="cadastrarPersonagem.habilidade"
+        [ngModelOptions]="{standalone: true}" />
+        <input class="w-25" type="text" placeholder="planeta" 
+        [(ngModel)]="cadastrarPersonagem.planeta"
+        [ngModelOptions]="{standalone: true}" />
+        <input class="w-25" type="text" placeholder="armas" 
+        [(ngModel)]="cadastrarPersonagem.armas"
+        [ngModelOptions]="{standalone: true}" />
+        <input class="w-25" type="text" placeholder="avatar" 
+        [(ngModel)]="cadastrarPersonagem.avatar"
+        [ngModelOptions]="{standalone: true}" />
+        <input class="w-25" type="text" placeholder="info" 
+        [(ngModel)]="cadastrarPersonagem.info"
+        [ngModelOptions]="{standalone: true}" />
+        <div class="m-2 p-2">
+            <button class="btn btn-primary" (click)="adicionarPersonagem()">Salvar</button>
+        </div>
+    </div>
+</main>
