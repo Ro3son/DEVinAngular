@@ -9,15 +9,6 @@
       "avatar": "http://especiais.ne10.uol.com.br/starwars/wp-content/uploads/2015/12/R2D2-300x300.png"
     },
     {
-      "id": 2,
-      "nome": "Yoda",
-      "habilidade": "Mestre Jedi",
-      "planeta": "Dagobah",
-      "armas": "Sabre de luz verde",
-      "avatar": "http://especiais.ne10.uol.com.br/starwars/wp-content/uploads/2015/12/yoda-300x300.png",
-      "info": "https://starwars.fandom.com/pt/wiki/Yoda"
-    },
-    {
       "id": 3,
       "nome": "Darth Vader",
       "habilidade": "Lado sombrio da força",
@@ -25,6 +16,15 @@
       "armas": "Sabre de luz azul",
       "avatar": "http://especiais.ne10.uol.com.br/starwars/wp-content/uploads/2015/12/darth_vader-300x300.png",
       "info": "https://starwars.fandom.com/pt/wiki/Anakin_Skywalker"
+    },
+    {
+      "id": 4,
+      "nome": "Janbo Fett",
+      "habilidade": "Caçador de recompensas mandaloriano",
+      "planeta": "Mandalore",
+      "armas": "Rifle EE-3",
+      "avatar": "http://especiais.ne10.uol.com.br/starwars/wp-content/uploads/2015/12/jango-300x300.png",
+      "info": "https://starwars.fandom.com/wiki/Jango_Fett"
     }
   ]
 }
