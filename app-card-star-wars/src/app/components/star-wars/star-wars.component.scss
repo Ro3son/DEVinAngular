@@ -1,13 +1,5 @@
 
 main {
-    .novoPersonagem {
-        gap: 0.4em;
-        input {
-            background-color: transparent;
-            color: #d9eee1;
-            border: 2px solid #1cbfff;
-        }
-    }
     .container-fluid {
         gap: 0.6em;
     }
@@ -42,7 +34,6 @@ main {
         }
     }
 }
-
 .btns {
     gap: 1em;
 
