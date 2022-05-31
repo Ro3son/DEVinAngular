@@ -27,7 +27,7 @@ export class StarwarsService {
   }
   // Atualiza informações //
   public putPersonagem(data: Starwars): Observable<Starwars[]> {
-    return this.http.put<Starwars[]>(`${this.requestURL}/${data}`, data);
+    return this.http.put<Starwars[]>(`${this.requestURL}/4`, data);
   }
   // Deleta informações //
   public delete(id: number): Observable<Starwars[]> {
