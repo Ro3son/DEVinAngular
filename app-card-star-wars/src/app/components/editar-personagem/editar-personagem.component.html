@@ -1,25 +1,15 @@
 <main class="m-1 p-1">
-    <div class="d-flex flex-column justify-content-center align-items-center mt-4 novoPersonagem">
-        <input class="w-25" type="text" placeholder="nome" 
-        [(ngModel)]="editaPersonagem.nome"
-        [ngModelOptions]="{standalone: true}" />
-        <input class="w-25" type="text" placeholder="habilidade" 
-        [(ngModel)]="editaPersonagem.habilidade"
-        [ngModelOptions]="{standalone: true}" />
-        <input class="w-25" type="text" placeholder="planeta" 
-        [(ngModel)]="editaPersonagem.planeta"
-        [ngModelOptions]="{standalone: true}" />
-        <input class="w-25" type="text" placeholder="armas" 
-        [(ngModel)]="editaPersonagem.armas"
-        [ngModelOptions]="{standalone: true}" />
-        <input class="w-25" type="text" placeholder="avatar" 
-        [(ngModel)]="editaPersonagem.avatar"
-        [ngModelOptions]="{standalone: true}" />
-        <input class="w-25" type="text" placeholder="info" 
-        [(ngModel)]="editaPersonagem.info"
-        [ngModelOptions]="{standalone: true}" />
-        <div class="m-2 p-2">
-            <button class="btn btn-primary" (click)="atualizarPersonagem()">Salvar</button>
-        </div>
+    <div class="mt-4 ">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="d-flex flex-column justify-content-center align-items-center novoPersonagem">
+            <input class="w-25" type="text" placeholder="nome" formControlName="nome" />
+            <input class="w-25" type="text" placeholder="habilidade" formControlName="habilidade" />
+            <input class="w-25" type="text" placeholder="planeta" formControlName="planeta" />
+            <input class="w-25" type="text" placeholder="armas" formControlName="armas" />
+            <input class="w-25" type="text" placeholder="avatar" formControlName="avatar" />
+            <input class="w-25" type="text" placeholder="info" formControlName="info" />
+            <div class="m-2 p-2">
+                <button class="btn btn-primary" (click)="onSubmit()">Salvar</button>
+            </div>
+        </form>
     </div>
 </main>
