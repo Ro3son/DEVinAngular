@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Starwars } from 'src/app/classes/starwars';
 import { StarwarsService } from 'src/app/services/starwars.service';
 
@@ -9,6 +10,15 @@ import { StarwarsService } from 'src/app/services/starwars.service';
 })
 export class EditarPersonagemComponent implements OnInit {
 
+  public form = this.fb.group({
+    nome: [''],
+    habilidade: [''],
+    planeta: [''],
+    armas: [''],
+    avatar: [''],
+    info: ['']
+  });
+
   public personagens: Starwars[] = [];
 
   public editaPersonagem: Starwars = {
@@ -16,9 +26,16 @@ export class EditarPersonagemComponent implements OnInit {
     armas: '', avatar: '', info: ''
   };
 
-  constructor(private starwarsService: StarwarsService) { }
+  constructor(
+    private starwarsService: StarwarsService, 
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit() { }
+
+  public onSubmit() {
+    
+  }
 
   public atualizarPersonagem() {
     return this.starwarsService.putPersonagem(this.editaPersonagem).subscribe(() => {
