@@ -1,5 +1,5 @@
 export class Starwars {
-    id: number
+    id: number;
     nome: string;
     habilidade: string;
     planeta: string;
@@ -7,7 +7,10 @@ export class Starwars {
     avatar: string;
     info: string;
 
-    constructor(id: number, nome: string, habilidade: string, planeta: string, armas: string, avatar: string, info: string) {
+    constructor(
+        id: number, nome: string, habilidade: string, planeta: string, 
+        armas: string, avatar: string, info: string) {
+            
         this.id = id;
         this.nome = nome;
         this.habilidade = habilidade;
