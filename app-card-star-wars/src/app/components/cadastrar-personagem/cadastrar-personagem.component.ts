@@ -24,7 +24,8 @@ export class CadastrarPersonagemComponent implements OnInit {
     return this.starwarsService.postPersonagem(this.cadastrarPersonagem).subscribe((cadastra) => {
       this.personagens = cadastra.map((key) => {
         return new Starwars(
-            { id: key.id, nome: key.nome, habilidade: key.habilidade, planeta: key.planeta, armas: key.armas, avatar: key.avatar, info: key.info })
+            key.id, key.nome, key.habilidade, key.planeta, 
+            key.armas, key.avatar, key.info );
       });
       console.log(this.personagens);
     });
