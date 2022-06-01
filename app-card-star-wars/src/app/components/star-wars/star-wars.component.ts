@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Starwars } from 'src/app/classes/starwars';
+import { StarWars } from 'src/app/interfaces/star-wars';
 import { StarwarsService } from 'src/app/services/starwars.service';
 
 @Component({
@@ -9,9 +10,9 @@ import { StarwarsService } from 'src/app/services/starwars.service';
 })
 export class StarWarsComponent implements OnInit {
 
-  public personagens: Starwars[] = [];
+  public personagens: StarWars[] = [];
 
-  public error: boolean = false;
+  public personagemId = [];
 
   constructor(private starwarsService: StarwarsService) { }
 
@@ -19,25 +20,15 @@ export class StarWarsComponent implements OnInit {
 
   public obterTodosPersonagens() {
     this.starwarsService.getPersonagens().subscribe((dados) => {
-      this.error = false;
       this.personagens = dados;
       console.log(JSON.stringify(this.personagens));
-    },
-      (erro: any) => {
-        console.warn('Deu erro', erro);
-        this.error = true;
-      })
+    });
   }
-  public obterIdPersonagem(id: number) {
-    this.starwarsService.obterSomenteUm(id).subscribe((dados) => {
-      this.error = false;
-      this.personagens = dados;
-      console.log(JSON.stringify(this.personagens));
-    },
-      (erro: any) => {
-        console.warn('Deu erro aqui', erro);
-        this.error = true;
-      });
+  public obterIdPersonagem() {
+    this.starwarsService.obterSomenteUm().subscribe((response: any) => {
+      this.personagemId = response;
+      console.log(JSON.stringify(this.personagemId));
+    });
   }
   public delete(id: number) {
     this.starwarsService.delete(id).subscribe(() => {
