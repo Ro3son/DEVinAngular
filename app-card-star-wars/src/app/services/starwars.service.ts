@@ -3,13 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Starwars } from '../classes/starwars';
+import { StarWars } from '../interfaces/star-wars';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class StarwarsService {
 
-  public requestURL = environment.API_Path;
+  private requestURL = environment.API_Path;
 
   constructor(private http: HttpClient) { }
 
@@ -18,8 +20,9 @@ export class StarwarsService {
     return this.http.get<Starwars[]>(this.requestURL);
   }
   // Requisita somente uma informação //
-  public obterSomenteUm(id: number): Observable<Starwars[]> {
-    return this.http.get<Starwars[]>(`${this.requestURL}/${id}`);
+  // Usando Interface StarWars //
+  public obterSomenteUm(): Observable<StarWars[]> {
+    return this.http.get<StarWars[]>(`${this.requestURL}/1`);
   }
   // Cadastra informações //
   public postPersonagem(data: Starwars): Observable<Starwars[]> {
