@@ -10,6 +10,7 @@ import { KeyobjectPipe } from './pipes/keyobject.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarPersonagemComponent } from './components/editar-personagem/editar-personagem.component';
 import { CadastrarPersonagemComponent } from './components/cadastrar-personagem/cadastrar-personagem.component';
+import { PersonagemIdComponent } from './components/personagem-id/personagem-id.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CadastrarPersonagemComponent } from './components/cadastrar-personagem/
     StarWarsComponent,
     KeyobjectPipe,
     EditarPersonagemComponent,
-    CadastrarPersonagemComponent
+    CadastrarPersonagemComponent,
+    PersonagemIdComponent
   ],
   imports: [
     BrowserModule,
