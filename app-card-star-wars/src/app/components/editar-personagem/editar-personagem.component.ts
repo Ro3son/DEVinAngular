@@ -27,19 +27,22 @@ export class EditarPersonagemComponent implements OnInit {
   };
 
   constructor(
-    private starwarsService: StarwarsService, 
+    private starwarsService: StarwarsService,
     private fb: FormBuilder
   ) { }
 
   ngOnInit() { }
 
-  public onSubmit() {
-    
-  }
+  public onSubmit() { }
 
   public atualizarPersonagem() {
     return this.starwarsService.putPersonagem(this.editaPersonagem).subscribe(() => {
-      console.log('Personagem Atualizado');
+      this.personagens.map((key) => {
+        return new Starwars(
+          key.id, key.nome, key.habilidade, key.planeta,
+          key.armas, key.avatar, key.info);
+      });
+      alert('Personagem Atualizado');
     })
   }
 }
