@@ -5,9 +5,10 @@ import { EditarPersonagemComponent } from './components/editar-personagem/editar
 import { StarWarsComponent } from './components/star-wars/star-wars.component';
 
 const routes: Routes = [
-  { path: '', component: StarWarsComponent },
-  { path: 'editarPersonagem', component: EditarPersonagemComponent },
-  { path: 'cadastrarPersonagem', component: CadastrarPersonagemComponent }
+  { path: '', redirectTo: 'personagens', pathMatch: 'full' },
+  { path: 'personagens', component: StarWarsComponent },
+  { path: 'editar', component: EditarPersonagemComponent },
+  { path: 'cadastrar', component: CadastrarPersonagemComponent }
 ];
 
 @NgModule({
