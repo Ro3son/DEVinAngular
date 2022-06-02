@@ -16,7 +16,7 @@
     </div>
     <div class="d-flex justify-content-center btns m-1 p-1">
         <button class="btn btn-dark" (click)="obterTodosPersonagens()">Obter Todos</button>
-        <button class="btn btn-dark" (click)="obterIdPersonagem()">Obter 1</button>
+        <button class="btn btn-dark" (click)="obterIdPersonagem()" [routerLink]="['/personagens', '1']">Obter 1</button>
         <button class="btn btn-dark" routerLink="/cadastrar">Adicionar</button>
         <button class="btn btn-dark" routerLink="/editar">Atualizar</button>
     </div>
