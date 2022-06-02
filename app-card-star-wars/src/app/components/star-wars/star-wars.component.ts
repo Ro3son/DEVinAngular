@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Starwars } from 'src/app/classes/starwars';
 import { StarWars } from 'src/app/interfaces/star-wars';
 import { StarwarsService } from 'src/app/services/starwars.service';
@@ -12,11 +13,17 @@ export class StarWarsComponent implements OnInit {
 
   public personagens: StarWars[] = [];
 
-  public personagemId = [];
+  public personagemId: any[] = [];
 
-  constructor(private starwarsService: StarwarsService) { }
+  constructor(
+    private starwarsService: StarwarsService,
+    private route: ActivatedRoute,
+  ) { }
 
-  ngOnInit() { this.obterTodosPersonagens() }
+  ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
+    console.log(id);
+   }
 
   public obterTodosPersonagens() {
     this.starwarsService.getPersonagens().subscribe((dados) => {
@@ -25,8 +32,8 @@ export class StarWarsComponent implements OnInit {
     });
   }
   public obterIdPersonagem() {
-    this.starwarsService.obterSomenteUm().subscribe((response: any) => {
-      this.personagemId = response;
+    this.starwarsService.obterSomenteUm().subscribe((response) => {
+      this.personagemId.push(response);
       console.log(JSON.stringify(this.personagemId));
     });
   }
