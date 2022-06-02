@@ -21,13 +21,13 @@ export class CadastrarPersonagemComponent implements OnInit {
   ngOnInit() { }
 
   public adicionarPersonagem() {
-    return this.starwarsService.postPersonagem(this.cadastrarPersonagem).subscribe((cadastra) => {
-      this.personagens = cadastra.map((key) => {
+    return this.starwarsService.postPersonagem(this.cadastrarPersonagem).subscribe(() => {
+      this.personagens.map((key) => {
         return new Starwars(
             key.id, key.nome, key.habilidade, key.planeta, 
             key.armas, key.avatar, key.info );
       });
-      console.log(this.personagens);
+      alert('Personagem cadastrado');
     });
   }
 }
